@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',  // 静的エクスポート用
+    output: 'export',
     images: {
-      unoptimized: true  // 静的エクスポートのため
+      unoptimized: true
     },
-    // 他の設定があればここに追加
+    distDir: 'out',
+    trailingSlash: true,
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/' : ''
   }
   
   module.exports = nextConfig
