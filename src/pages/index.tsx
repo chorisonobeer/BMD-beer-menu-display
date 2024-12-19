@@ -6,8 +6,10 @@ import { useBeerData } from '../hooks/useBeerData';
 
 const Home: NextPage = () => {
   const { beers, loading, error } = useBeerData();
+  console.log('Home component:', { beers, loading, error });  // 状態を確認
 
   if (loading) {
+    console.log('Loading state active');
     return (
       <div className="flex items-center justify-center min-h-screen bg-black text-white">
         Loading...
@@ -16,6 +18,7 @@ const Home: NextPage = () => {
   }
 
   if (error) {
+    console.log('Error state active:', error);
     return (
       <div className="flex items-center justify-center min-h-screen bg-black text-red-500">
         {error}
@@ -23,15 +26,13 @@ const Home: NextPage = () => {
     );
   }
 
+  console.log('Rendering beers:', beers);  // レンダリングされるデータを確認
   return (
     <>
       <Head>
         <title>Beer Menu Display</title>
-        <meta name="description" content="Real-time beer menu display" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
+      <main className="min-h-screen bg-black">
         <BeerMenu beers={beers} />
       </main>
     </>

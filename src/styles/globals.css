@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 13, 13, 19;
+  --background-end-rgb: 13, 13, 19;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  body {
+    @apply bg-[#0d0d13] text-white min-h-screen;
+  }
+}
+
+@layer components {
+  .beer-card {
+    @apply relative bg-[#1a1a24] border border-purple-900/30 p-6 transition-all duration-200;
+  }
+
+  .beer-number {
+    @apply text-3xl font-bold text-gray-500 mb-4;
+  }
+
+  .beer-title {
+    @apply text-xl font-bold text-white mb-1;
+  }
+
+  .beer-subtitle {
+    @apply text-sm text-gray-400 mb-2;
+  }
+
+  .beer-brewery {
+    @apply text-sm text-emerald-500 mb-4;
+  }
+
+  .beer-tag {
+    @apply inline-flex px-3 py-1 bg-black text-xs text-white rounded-full mr-2 mb-2;
+  }
+
+  .house-beer-badge {
+    @apply bg-pink-600 px-2 py-0.5 rounded-full text-xs text-white;
+  }
+
+  .beer-spec {
+    @apply text-lg font-medium;
+  }
+
+  .beer-spec-value {
+    @apply text-2xl font-bold;
+  }
+
+  .beer-spec-abv {
+    @apply text-pink-500;
+  }
+
+  .beer-spec-ibu {
+    @apply text-cyan-400;
+  }
+
+  .beer-price {
+    @apply text-right text-lg;
+  }
+
+  .beer-price-value {
+    @apply text-white font-medium;
+  }
+}
+
+/* ローディングアニメーション */
+.loading {
+  @apply flex items-center justify-center min-h-screen;
+}
+
+.loading:after {
+  content: '.';
+  animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60% { content: '...'; }
+  80% { content: '....'; }
+  100% { content: '.....'; }
+}
+
+/* SOLDOUTオーバーレイ */
+.sold-out-overlay {
+  @apply absolute inset-0 bg-black/80 flex items-center justify-center z-10;
+}
+
+.sold-out-text {
+  @apply text-red-500 text-5xl font-bold transform -rotate-12;
+}
