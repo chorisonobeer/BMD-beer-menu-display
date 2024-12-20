@@ -15,6 +15,7 @@ export const useBeerData = () => {
       try {
         const data = snapshot.val();
         if (data) {
+          console.log('Raw data from Firebase:', data);
           const formattedData = Object.values(data).map((item: any) => ({
             number: Number(item.number) || 0,
             name: item.name || '',
@@ -25,12 +26,15 @@ export const useBeerData = () => {
                   (item.tags ? item.tags.split(',').map((t: string) => t.trim()) : []),
             abv: Number(item.abv) || 0,
             ibu: Number(item.ibu) || 0,
+            srm: Number(item.srm) || 0,
+            imageUrl: item.imageUrl || null,
             pint_price: Number(item.pint_price) || 1500,
             half_price: Number(item.half_price) || 900,
             sold_out: String(item.sold_out).toLowerCase() === 'true',
             is_house_beer: String(item.is_house_beer).toLowerCase() === 'true',
             switch_flag: String(item.switch_flag).toLowerCase() === 'true'
           }));
+          console.log('Formatted data:', formattedData);
           setBeers(formattedData);
         }
         setLoading(false);

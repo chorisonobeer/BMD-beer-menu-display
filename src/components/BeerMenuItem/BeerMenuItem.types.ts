@@ -1,6 +1,3 @@
-import { ReactNode } from 'react';
-
-
 export interface BeerMenuItemProps {
   number: number;
   name: string;
@@ -10,6 +7,8 @@ export interface BeerMenuItemProps {
   tags: string[];
   abv: number;
   ibu: number;
+  srm: number;
+  imageUrl?: string;
   pint_price: number;
   half_price: number;
   sold_out: boolean;
