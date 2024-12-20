@@ -32,9 +32,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Beer Menu Display</title>
       </Head>
-      <main className="min-h-screen bg-black">
-        <BeerMenu beers={beers} />
-      </main>
+      <main className="min-h-screen bg-beer-bg">
+  <BeerMenu beers={beers} />
+</main>
     </>
   );
 };
