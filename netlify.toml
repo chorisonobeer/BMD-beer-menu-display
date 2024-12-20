@@ -6,6 +6,13 @@
 [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
   NODE_VERSION = "18.17.0"
+  NEXT_PUBLIC_FIREBASE_API_KEY = "AIzaSyCevXEO6ZtanvW5FXQBsO7wTXw3khK7PnE"
+  NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN = "bmd-beer-menu-display.firebaseapp.com"
+  NEXT_PUBLIC_FIREBASE_DATABASE_URL = "https://bmd-beer-menu-display-default-rtdb.asia-southeast1.firebasedatabase.app"
+  NEXT_PUBLIC_FIREBASE_PROJECT_ID = "bmd-beer-menu-display"
+  NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET = "bmd-beer-menu-display.firebasestorage.app"
+  NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID = "914930073155"
+  NEXT_PUBLIC_FIREBASE_APP_ID = "1:914930073155:web:47e113084f81c12bcbdef6"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
